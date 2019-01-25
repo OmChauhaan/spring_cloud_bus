@@ -1,6 +1,6 @@
 user:
   role: Developer
-  password: adminPASSSS
+  password: adminPASSSS_cha
   
 management:
   endpoints:

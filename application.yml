@@ -1,5 +1,6 @@
-user.role=Developer
-user.password=adminPASSSS
+user:
+  role: Developer
+  password: adminPASSSS
   
 management:
   endpoints:

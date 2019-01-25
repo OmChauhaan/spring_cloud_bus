@@ -8,7 +8,7 @@ rcx:
       rcxPosAddress: https://rcx-sei-nec.sandbox.rcx-dev7.lmvi.net
       rcxDigitalAddress: https://rcx-sei-digital.sandbox.rcx-dev7.lmvi.net
       proxyBufferMode: false
-      rcxCutoverEnabled: true
+      rcxCutoverEnabled: false
       rcxForwardingEnabled: true
       rcxSelectiveForwardingEnabled: false
       llpDisabled : true

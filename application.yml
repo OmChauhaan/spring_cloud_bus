@@ -6,7 +6,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: env,info,health,configprops
+        include: env,info,health,configprops, refresh
           
   
 spring:

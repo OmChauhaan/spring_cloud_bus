@@ -1,4 +1,6 @@
-  
+user:
+  role: Developer
+  password: pass@123
 management:
   endpoints:
     web:

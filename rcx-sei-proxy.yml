@@ -1,0 +1,35 @@
+rcx:
+  sei:
+    proxy:
+      llpPosUrl: http://localhost:8080/nec/ws/request
+      llpDigitalUrl: http://localhost:8081/nec/ws/request
+      rcxPosUrl: https://rcx-sei-nec.sandbox.rcx-dev7.lmvi.net/nec/ws/request
+      rcxDigitalUrl: https://rcx-sei-digital.sandbox.rcx-dev7.lmvi.net/nec/ws/request
+      rcxPosAddress: https://rcx-sei-nec.sandbox.rcx-dev7.lmvi.net
+      rcxDigitalAddress: https://rcx-sei-digital.sandbox.rcx-dev7.lmvi.net
+      proxyBufferMode: false
+      rcxCutoverEnabled: true
+      rcxForwardingEnabled: true
+      rcxSelectiveForwardingEnabled: false
+      llpDisabled : true
+      useExcludedList: false
+      bufferWriteQueue: RCX_WRITE_QUEUE
+      writeExchange: RCX_WRITE_EXCHANGE
+      writeRouteKey: RCX_BUFF_KEY
+      digitalBufferWriteQueue: RCX_DIGITAL_WRITE_QUEUE
+      digitalWriteExchange: RCX_DIGITAL_WRITE_EXCHANGE
+      digitalWriteRouteKey: RCX_DIGITAL_BUFF_KEY
+      compExchange: RCX_COMP_EXCHANGE
+      compQueue: COMP_QUEUE
+      compRouteKey: RCX_COMP_KEY
+      digiCompExchange: RCX_DIGI_COMP_EXCHANGE
+      digiCompQueue: DIGI_COMP_QUEUE
+      digiCompRouteKey: RCX_DIGI_COMP_KEY
+      dlExchange: RCX_DL_EXCHANGE
+      dlQueue: RCX_DL_QUEUE
+      dlExchangeKey: x-dead-letter-exchange
+      isDurable : true      
+  aws :
+    awsId : ${AWS_ACCESS_KEY}
+    awsKey : ${AWS_SECRET_KEY}
+    awsRegion : ap-southeast-1    

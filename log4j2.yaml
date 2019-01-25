@@ -1,0 +1,76 @@
+Configuration:
+  name: Default
+
+  Properties:
+    Property:
+      - name: log-path
+        value: logs
+      - name: app-name
+        value: sei-proxy
+
+  Appenders:
+
+    Console:
+      name: Proxy-Console-Appender
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: "%d{yyyy-MM-dd HH:mm:ss.SSS} %10p [${app-name},%X{traceId},%X{spanId}] %m%n"
+
+    File:
+      name: Proxy-Service-File-Appender
+      fileName: ${log-path}/nec_adapter_service.log
+      PatternLayout:
+        pattern: "%d{yyyy-MM-dd HH:mm:ss.SSS} %10p [${app-name},%X{traceId},%X{spanId}] %m%n"
+
+    RollingFile:
+      - name: Proxy-Service-Rollingfile-Appender
+        fileName: ${log-path}/proxy_service_rolling.log
+        filePattern: "logs/archive/proxy_service_rolling.log.%d{yyyy-MM-dd-hh-mm}.gz"
+        PatternLayout:
+          pattern: "%d{yyyy-MM-dd HH:mm:ss.SSS} %10p [${app-name},%X{traceId},%X{spanId}] %m%n"
+        Policies:
+          SizeBasedTriggeringPolicy:
+            size: 1 KB
+        DefaultRollOverStrategy: 
+          max: 30
+      - name: Spring-Rolling-File-Appender
+        fileName: ${log-path}/proxy_root_log.log
+        filePattern: "logs/archive/proxy_root_log.log.%d{yyyy-MM-dd-hh-mm}.gz"
+        PatternLayout:
+          pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+        Policies:
+          SizeBasedTriggeringPolicy:
+            size: 1 KB
+        DefaultRollOverStrategy: 
+          max: 30
+          
+
+  Loggers:
+
+      Root:
+        level: trace
+        AppenderRef:
+          - ref: Proxy-Console-Appender
+
+      AsyncLogger: 
+        - name: com.rcx.sei.proxy
+          additivity: false
+          level: trace
+          AppenderRef:
+            - ref: Proxy-Console-Appender
+              level: trace
+            - ref: Proxy-Service-File-Appender
+              level: error
+            - ref: Proxy-Service-Rollingfile-Appender
+              level: debug
+        - name: org.springframework
+          additivity: false
+          level: info
+          AppenderRef:
+            - ref: Proxy-Console-Appender
+              level: trace
+            - ref: Proxy-Service-File-Appender
+              level: error
+            - ref: Spring-Rolling-File-Appender
+              level: debug
+          

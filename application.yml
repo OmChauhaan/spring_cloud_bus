@@ -1,0 +1,36 @@
+server:
+  port: 9080
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: env,info,health,configprops
+          
+  
+spring:
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    sender:
+      type: web
+  application:
+    name: RCX Sei Proxy
+
+logging:
+  pattern:
+    level: '%5p [${spring.zipkin.service.name:${spring.application.name:-}},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-}]'
+  
+  level:
+    com.rcx.sei.proxy: TRACE
+    #org.springframework: DEBUG
+ 
+---
+spring:
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USER:guest}
+    password: ${RABBITMQ_PASSWORD:guest}  
+    virtual-host: ${RABBITMQ_VHOST:}

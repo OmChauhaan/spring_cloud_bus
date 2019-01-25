@@ -1,0 +1,10 @@
+#Please add the CSV here for store id's when we get the cutover list
+rcx:
+  cutover:
+      storeList: 10017,456
+      storeExcludeList: 10117
+      testMemberGroup: 123
+      memberList: 7446
+      memberExcludeList: 123
+      storeListRegEx: ^100[0-9]{2,8}$ # this regex matches store ids whose number starts with 100 and length can be 2 to 8 digits, change this regex based on requirement
+      memberListRegEx: ^101[0-9]{2,8}?(12)$ # this regex matches member ids whose number starts with 100 and length can be 2 to 8 digits and ends with 12,change this regex based on requirement

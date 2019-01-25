@@ -28,7 +28,10 @@ rcx:
       dlExchange: RCX_DL_EXCHANGE
       dlQueue: RCX_DL_QUEUE
       dlExchangeKey: x-dead-letter-exchange
-      isDurable : true      
+      cloudBusExchange: CLOUD_BUS_EXCHANGE
+      cloudBusQueue: CLOUD_BUS_QUEUE
+      cloudBusKey: CLOUD_BUS_KEY
+      isDurable : true
   aws :
     awsId : ${AWS_ACCESS_KEY}
     awsKey : ${AWS_SECRET_KEY}

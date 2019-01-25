@@ -1,4 +1,5 @@
-
+user.role=Developer
+user.password=adminPASSSS
   
 management:
   endpoints:

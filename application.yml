@@ -1,6 +1,6 @@
 user:
   role: Developer
-  password: pass@1235678
+  password: pass@CHANGED
 management:
   endpoints:
     web:

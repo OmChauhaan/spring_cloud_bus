@@ -13,7 +13,7 @@ rcx:
       rcxSelectiveForwardingEnabled: false
       llpDisabled : true
       useExcludedList: false
-      bufferWriteQueue: RCX_WRITE_QUEUE_MODIFY
+      bufferWriteQueue: RCX_WRITE_QUEUE
       writeExchange: RCX_WRITE_EXCHANGE
       writeRouteKey: RCX_BUFF_KEY
       digitalBufferWriteQueue: RCX_DIGITAL_WRITE_QUEUE

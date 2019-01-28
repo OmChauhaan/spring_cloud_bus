@@ -16,7 +16,7 @@ spring:
     sender:
       type: web
   application:
-    name: RCX Sei Proxy
+    name: RCX Sei Proxy APPPP
 
 logging:
   pattern:

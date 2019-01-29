@@ -1,6 +1,6 @@
 user:
   role: Developer
-  password: pass12345DDDD
+  password: pass
 management:
   endpoints:
     web:

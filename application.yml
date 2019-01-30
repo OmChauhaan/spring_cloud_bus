@@ -28,6 +28,7 @@ logging:
   
   level:
     com.rcx.sei.proxy: TRACE
+    com.reactorcx: TRACE
     #org.springframework: DEBUG
  
 ---

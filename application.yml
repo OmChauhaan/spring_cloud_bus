@@ -1,6 +1,10 @@
 user:
   role: Developer
   password: Password1!
+  
+server:
+  port: ${SERVER_PORT:9080}
+  
 management:
   endpoints:
     web:
